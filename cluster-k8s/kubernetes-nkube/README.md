@@ -19,7 +19,7 @@ Use [this link](https://www.vagrantup.com/downloads.html) to download Vagrant if
 
 ## Creating  Kubernetes cluster
 Performe the following steps with powershell :
-1. Download or clone this repository `git clone https://github.com/ZiyaadQasem/Kubernetes-nkube.git`
+1. Download or clone this repository `git clone https://github.com/elguesmi-ramzi/k8s-cluster.git`
 2. Navigate to Kubernetes-nkube directory `cd Kubernetes-nkube`
 3. Run this command `vagrant up --provider virtualbox`
 > Note: this command will create 3-nodes cluster (1 maser and 2 workers). If you want more or less worker nodes you can just change the value of the variable WORKERS_NUMBER inside the file Vagrantfile.
@@ -43,4 +43,19 @@ worker-2   Ready    <none>   40m   v1.17.2
 > Notes: 
     - After you create the cluster, you can only perform steps 2 and 3 whenever you want to run it. 
     - To login any node you can run this command: `vagrant ssh [NODE_NAME]`.
+	
+> You can get this error when starting vm machine in virtualBox : VTx error.
+52
+Shut down the hyper-v service running by default in Windows 8/10, because it blocks all other calls to the VT equipment.
+Further explanation here: https://social.technet.microsoft.com/Forums/windows/en-US/118561b9-7155-46e3-a874-6a38b35c67fd/hyperv-disables-vtx-for-other-hypervisors?forum=w8itprogeneral
+
+________________________________________
+
+
+To disable the hypervisor, run this from the Command Prompt (Admin) (Windows + X):
+bcdedit / set hypervisorlaunchtype off
+and restart your computer. To reactivate it, run:
+bcdedit / set hypervisorlaunchtype on
+If you receive "The entire data is not valid as specified", try:
+bcdedit / set hypervisorlaunchtype auto
 
