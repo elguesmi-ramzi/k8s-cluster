@@ -45,15 +45,15 @@ worker-2   Ready    <none>   40m   v1.17.2
     - To login any node you can run this command: `vagrant ssh [NODE_NAME]`.
 	
 > You can get this error when starting vm machine in virtualBox : VTx error.
-52
+
 Shut down the hyper-v service running by default in Windows 8/10, because it blocks all other calls to the VT equipment.
 Further explanation here: https://social.technet.microsoft.com/Forums/windows/en-US/118561b9-7155-46e3-a874-6a38b35c67fd/hyperv-disables-vtx-for-other-hypervisors?forum=w8itprogeneral
+
 To disable the hypervisor, run this from the Command Prompt (Admin) (Windows + X):
-bcdedit / set hypervisorlaunchtype off
-and restart your computer. To reactivate it, run:
-bcdedit / set hypervisorlaunchtype on
+   - bcdedit / set hypervisorlaunchtype off , and restart your computer. To reactivate it, run:
+   - bcdedit / set hypervisorlaunchtype on
 If you receive "The entire data is not valid as specified", try:
-bcdedit / set hypervisorlaunchtype auto
+   - bcdedit / set hypervisorlaunchtype auto
 ________________________________________
 
 
